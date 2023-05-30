@@ -3,6 +3,13 @@
 マイクラ用のDiscordチャットピッカーです。  
 Discordのチャットをマイクラ上にオーバーレイとして表示し、メッセージをクリックすることでマイクラのチャットに送信できます。  
 
+![プレビュー](https://github.com/Kamesuta/ChatDiscordPicker/assets/16362824/978cff27-cd73-4bc8-9d73-da544ef5f552)
+
+## ダウンロード
+
+1. [リリースページ](https://github.com/Kamesuta/ChatDiscordPicker/releases) から `ChatDiscordPicker.zip` をダウンロード
+2. 展開して、exeを起動すれば使えます。
+
 ## セットアップ
 
 1. [Discord StreamKit](https://streamkit.discord.com/overlay) のページを開きます。
