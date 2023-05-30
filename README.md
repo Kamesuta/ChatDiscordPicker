@@ -26,3 +26,11 @@ Discordのチャットをマイクラ上にオーバーレイとして表示し�
 1. マイクラを開き、「Tキー」を押してチャット欄を開きます。
 2. 表示されているDiscordのメッセージをクリックするとチャット欄に自動入力されます。
 3. そのままEnterキーを押すと送信されます。
+
+## トラブルシューティング
+
+- Q. `You must install .NET Desktop Runtime to run this application.` と表示される。
+    - .NET6.0 が必要です。足りない場合はエラー画面で「はい」を押すと表示されるサイトから .NET をダウンロードしてください。
+- Q. 画面が透明じゃありません
+    - Discord StreamKit の設定で `Opacity` の値を下げてみてください。
+      <img src="https://github.com/Kamesuta/ChatDiscordPicker/assets/16362824/8658a85a-dca4-427f-b405-f780b04f0e23" width="500px">
