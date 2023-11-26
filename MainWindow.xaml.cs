@@ -110,30 +110,37 @@ namespace ChatDiscordPicker
                 // マイクラのウィンドウを記憶
                 minecraftWindowHandle = ActiveWindow.GetActiveWindow();
 
-                // 背景色の透明解除
-                backImage.Opacity = 0.01;
-                mainBorder.BorderBrush = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));
-
-                // チャット画面を表示
-                if (webView.Visibility == Visibility.Hidden)
-                {
-                    try
-                    {
-                        webView.Source = new Uri(widgetUrl.Text);
-                        webView.Visibility = Visibility.Visible;
-                        webSetup.Visibility = Visibility.Hidden;
-                    }
-                    catch
-                    {
-                        // URLが不正
-                    }
-                }
+                // オーバーレイモード開始
+                StartOverlayMode();
             }
             else if (vkCode == (byte)Keys.VK_RETURN || vkCode == (byte)Keys.VK_ESCAPE)
             {
                 // 背景色を透明化
                 backImage.Opacity = 0.0;
                 mainBorder.BorderBrush = null;
+            }
+        }
+
+        // オーバーレイモード開始
+        private void StartOverlayMode()
+        {
+            // 背景色の透明解除
+            backImage.Opacity = 0.01;
+            mainBorder.BorderBrush = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));
+
+            // チャット画面を表示
+            if (webView.Visibility == Visibility.Hidden)
+            {
+                try
+                {
+                    webView.Source = new Uri(widgetUrl.Text);
+                    webView.Visibility = Visibility.Visible;
+                    webSetup.Visibility = Visibility.Hidden;
+                }
+                catch
+                {
+                    // URLが不正
+                }
             }
         }
 
@@ -288,6 +295,11 @@ namespace ChatDiscordPicker
             Hyperlink link = (Hyperlink)e.OriginalSource;
             var url = link.NavigateUri.AbsoluteUri.Replace("&", "^&");
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+        }
+
+        private void StartForce_Click(object sender, RoutedEventArgs e)
+        {
+            StartOverlayMode();
         }
     }
 }

@@ -25,7 +25,8 @@
                 ウィンドウの縁をドラッグ＆ドロップで移動、右下のつまみでリサイズできます。<LineBreak/>
                 アプリの終了は、タスクバーのアイコンを右クリックして終了してください。
             </TextBlock>
-            <TextBox x:Name="widgetUrl" Margin="16,219,16,0" TextWrapping="Wrap" Background="#3FFFFFFF" Height="130" VerticalAlignment="Top" Foreground="White" />
+            <TextBox x:Name="widgetUrl" Margin="16,219,16,51" TextWrapping="Wrap" Background="#3FFFFFFF" Foreground="White" />
+            <Button x:Name="startForce" Content="マイクラなしでオーバーレイを起動" Margin="0,0,16,16" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="217" Click="StartForce_Click"/>
         </Grid>
         <Border BorderThickness="6">
             <wv2:WebView2 x:Name="webView" Source="" CoreWebView2InitializationCompleted="WebView_CoreWebView2InitializationCompleted" DefaultBackgroundColor="Transparent" Visibility="Hidden"/>
